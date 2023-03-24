@@ -1,5 +1,6 @@
 package project.tech.crud.controllers;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -24,13 +25,13 @@ public class TaskController {
     // Create task
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
-    Task create(@RequestBody Task task) {
+    Task create(@RequestBody @Valid Task task) {
         return taskRepository.save(task);
     }
 
     // Update task
     @PutMapping("{id}")
-    Task update(@PathVariable String id, @RequestBody Task task) {
+    Task update(@PathVariable String id, @RequestBody @Valid Task task) {
         Task taskFromDB = taskRepository
                 .findById(id)
                 .orElseThrow(RuntimeException::new);
