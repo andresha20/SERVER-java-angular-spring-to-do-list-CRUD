@@ -32,6 +32,7 @@ public class TaskController {
     // Update task
     @PutMapping("{id}")
     Task update(@PathVariable String id, @RequestBody @Valid Task task) {
+
         Task taskFromDB = taskRepository
                 .findById(id)
                 .orElseThrow(RuntimeException::new);
