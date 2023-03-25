@@ -1,4 +1,4 @@
-# java-spring-to-do-list-CRUD
+# SERVER-java-spring-to-do-list-CRUD
 This project is a simple, yet useful to-do list built on top of Spring Boot for Java.
 
 # DEVELOPMENT DATA:
